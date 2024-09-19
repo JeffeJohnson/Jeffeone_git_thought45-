@@ -1,0 +1,32 @@
+//"This is a good a"==this 1//is 1//a 2//good 1//
+
+import java.util.Map;
+import java.util.HashMap;
+
+public class hello {
+    public static void main(String[] args) {
+        String input = "this is a good place for this good sleep";
+        String ans = countWord(input);
+        System.out.println(ans);
+    }
+
+    public static String countWord(String input) {
+        String[] words = input.split(" ");
+        Map<String, Integer> value = new HashMap<>();
+
+        for (String word : words) {
+            if (value.containsKey(word)) {
+                value.put(word, value.get(word) + 1);
+            } else {
+                value.put(word, 1);
+            }
+        }
+
+        String output="";
+        for (Map.Entry<String, Integer> entry : value.entrySet()) {
+           output+=entry.getKey()+" "+entry.getValue()+" //";
+        }
+
+        return output;
+    }
+}
