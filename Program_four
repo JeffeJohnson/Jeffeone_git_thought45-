@@ -1,0 +1,21 @@
+//input="THIS IS A" output="SIHT SI A"
+
+public class Hello{
+    public static void main (String[] args){
+        String input=" THIS IS A";
+        String ans=reverse(input);
+        System.out.println(ans);
+    }
+    public static String reverse(String input){
+        String[] words=input.split(" ");
+        String rev="";
+        for(String word:words){
+            String reversedword="";
+            for(int i=word.length()-1;i>=0;i--){
+                 reversedword+=word.charAt(i);
+            }
+            rev+=reversedword+" ";
+        }
+        return rev;
+    }
+}
